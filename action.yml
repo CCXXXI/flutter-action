@@ -19,3 +19,4 @@ runs:
         channel: ${{ inputs.channel }}
 
     - run: flutter pub get
+      with: bash
