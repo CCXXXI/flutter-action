@@ -16,6 +16,6 @@ runs:
         java-version: '12.x'
     - uses: subosito/flutter-action@v1
       with:
-        channel: ${{ matrix.channel }}
+        channel: ${{ inputs.channel }}
 
     - run: flutter pub get
