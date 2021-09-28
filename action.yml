@@ -20,3 +20,6 @@ runs:
 
     - run: flutter pub get
       shell: bash
+      
+    - run: flutter config --enable-web --enable-linux-desktop --enable-macos-desktop --enable-windows-desktop --enable-android --enable-ios
+      shell: bash
