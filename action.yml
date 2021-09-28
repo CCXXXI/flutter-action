@@ -1,0 +1,21 @@
+name: 'Setup Flutter'
+description: 'checkout & setup-java & flutter-action & flutter pub get'
+
+inputs:
+  channel:
+    description: 'channel of flutter'
+    required: false
+    default: 'stable'
+runs:
+  using: "composite"
+  steps:
+    - uses: actions/checkout@v2
+    - uses: actions/setup-java@v2
+      with:
+        distribution: 'zulu'
+        java-version: '12.x'
+    - uses: subosito/flutter-action@v1
+      with:
+        channel: ${{ matrix.channel }}
+
+    - run: flutter pub get
