@@ -5,7 +5,7 @@ inputs:
   channel:
     description: 'channel of flutter'
     required: false
-    default: 'stable'
+    default: 'master'
 runs:
   using: "composite"
   steps:
