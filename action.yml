@@ -6,6 +6,10 @@ inputs:
     description: 'channel of flutter'
     required: false
     default: 'master'
+  directory:
+    description: 'working directory'
+    required: false
+    default: '.'
 runs:
   using: "composite"
   steps:
@@ -20,6 +24,7 @@ runs:
 
     - run: flutter pub get
       shell: bash
+      working-directory: ${{ inputs.directory }}
       
     - run: flutter config --enable-web --enable-linux-desktop --enable-macos-desktop --enable-windows-desktop --enable-android --enable-ios
       shell: bash
