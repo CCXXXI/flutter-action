@@ -1,2 +1,3 @@
-# flutter-action
+# Flutter Action
 
+See [actions.yml](./actions.yml).
