@@ -1,30 +1,14 @@
 name: 'Setup Flutter'
-description: 'checkout & setup-java & flutter-action & flutter pub get'
+description: 'checkout & setup-java & flutter-action & flutter pub get & flutter pub run build_runner build'
 
-inputs:
-  channel:
-    description: 'channel of flutter'
-    required: false
-    default: 'master'
-  directory:
-    description: 'working directory'
-    required: false
-    default: '.'
 runs:
   using: "composite"
   steps:
     - uses: actions/checkout@v3
-    - uses: actions/setup-java@v2
+    - uses: actions/setup-java@v3
       with:
-        distribution: 'temurin'
+        distribution: 'zulu'
         java-version: '17'
-    - uses: subosito/flutter-action@v1
-      with:
-        channel: ${{ inputs.channel }}
-
+    - uses: subosito/flutter-action@v2
     - run: flutter pub get
-      shell: bash
-      working-directory: ${{ inputs.directory }}
-      
-    - run: flutter config --enable-web --enable-linux-desktop --enable-macos-desktop --enable-windows-desktop --enable-android --enable-ios
-      shell: bash
+    - run: flutter pub run build_runner build
