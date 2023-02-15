@@ -1,3 +1,3 @@
 # Flutter Action
 
-See [actions.yml](./actions.yml).
+See [action.yml](./action.yml).
